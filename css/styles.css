@@ -1,0 +1,211 @@
+body {
+  color: rgb(41, 41, 41);
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+header {
+  background-color: rgb(86, 43, 129);
+}
+
+h1,
+h2 {
+  font-family: 'Proza Libre', serif;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-family: 'Proza Libre', serif;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+.button {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: rgb(218, 218, 218);
+}
+
+input:focus,
+textarea:focus {
+  outline-color: rgb(105, 55, 155);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.app-name {
+  font-size: 1.25rem;
+}
+
+.nav-item {
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+.button-primary,
+.button-destroy {
+  color: white;
+}
+
+.button-primary {
+  background-color: rgb(86, 43, 129);
+}
+
+.button-link {
+  text-transform: none;
+  text-decoration: underline;
+  background-color: transparent;
+  padding: 0;
+}
+
+.button-destroy {
+  background-color: rgb(255, 70, 70);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.entry-photo {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .entry-photo {
+    height: 352px;
+  }
+}
+
+.entry-heading,
+.entries-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry {
+  position: relative;
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.edit {
+  color: rgb(86, 43, 129);
+  cursor: pointer;
+}
+
+.delete-entry {
+  color: rgb(255, 70, 70);
+}
+
+.edit,
+.delete-entry {
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.edit:hover,
+.delete-entry:hover {
+  opacity: 1;
+}
+
+#entry-form[data-action="create"] .delete-entry {
+  visibility: hidden;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.modal-heading {
+  margin-bottom: 3rem;
+}
+
+.form-actions,
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-actions button:not(:first-child) {
+  margin-left: 0.75rem;
+}

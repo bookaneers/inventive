@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Journal</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <div class="navbar container">
+      <nav class="column-full">
+        <span class="app-name">Code Journal</span>
+        <a href="#" data-view="entries" class="nav-item">Entries</a>
+      </nav>
+    </div>
+  </header>
+  <!-- main -->
+  <main class="container">
+    <!-- data-view ENTRIES -->
+    <div data-view="entries" class="hidden">
+      <!-- inside entries ROW  1 of 2 -->
+      <div class="row">
+        <!-- column-full -->
+        <div class="column-full entries-heading">
+          <h1>Entries</h1>
+          <a href="#" data-view="entry-form" class="button button-primary">New</a>
+        </div>
+      </div>
+      <!-- inside entries ROW  2 of 2 -->
+      <div class="row">
+        <ol id="entries-list"></ol>
+      </div>
+    </div>
+    <!-- data-view ENTRY-FORM -->
+    <div data-view="entry-form" class="hidden">
+      <!-- inside entry-form ROW 1 of ? -->
+      <div class="row">
+        <div class="column-full">
+          <h1 id="entry-form-title">Create Entry</h1>
+        </div>
+      </div>
+      <!-- FORM -->
+      <form id="entry-form" data-action="create">
+        <input type="hidden" name="entryId">
+        <!-- inside form ROW 1 of 2 -->
+        <div class="row">
+          <!-- half-column -->
+          <div class="column-half avatar-container">
+            <img class="entry-photo" id="photo-preview" src="images/placeholder-image-square.jpg">
+          </div>
+          <!-- half-column -->
+          <div class="column-half">
+            <label for="title">Title</label>
+            <input required type="text" name="title" id="title">
+            <label for="photoUrl">Photo URL</label>
+            <input required type="url" name="photoUrl" id="photoUrl">
+          </div>
+        </div>
+        <!-- inside form ROW 2 of 2 -->
+        <div class="row">
+          <!-- column-full -->
+          <div class="column-full">
+            <label for="notes">Notes</label>
+            <textarea required rows="6" name="notes" id="notes"></textarea>
+            <div class="form-actions">
+              <button type="button" data-action="delete" class="delete-entry button button-link">
+                Delete Entry
+              </button>
+              <button type="submit" class="button button-primary">Save</button>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL -->
+        <div id="delete-entry-modal" class="modal">
+          <div class="modal-content">
+            <h3 class="modal-heading">Are you sure you want to delete this entry?</h3>
+            <div class="modal-actions">
+              <button type="button" data-action="cancel-delete" class="button">Cancel</button>
+              <button type="button" data-action="confirm-delete" class="button button-destroy">Confirm</button>
+            </div>
+          </div>
+        <!-- enf of MODAL -->
+        </div>
+      <!-- end of FORM -->
+      </form>
+    </div>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
